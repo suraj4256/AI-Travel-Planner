@@ -21,6 +21,7 @@ export default function index() {
   .then((userCredential) => {
     // Signed up 
     const user = userCredential.user;
+    router.replace('./mytrip');
     console.log(user)
     // ...
   })
@@ -30,10 +31,6 @@ export default function index() {
     console.log(errorMessage);
     // ..
   },
-  setFullName(""),
-  
-
-
 );
   }
 

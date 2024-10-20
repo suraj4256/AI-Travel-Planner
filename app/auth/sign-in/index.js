@@ -19,8 +19,9 @@ export default function index() {
   .then((userCredential) => {
     // Signed in 
     const user = userCredential.user;
+    router.replace('./mytrip');
     if(user){
-      console.log("User successfully signed in")
+      console.log("User successfully signed in");
     }
     // ...
 
