@@ -153,7 +153,7 @@ export default function index() {
           marginTop: "5%",
           height:60
         }}
-        onPress={() => router.replace("auth/sign-up")}
+        onPress={() => {router.replace("auth/sign-up")}}
       >
         <Text
           style={{
