@@ -72,7 +72,7 @@ export default function SelectTraveller() {
             style={{
                 marginVertical:10
             }}>
-            <OptionCard selectedTraveller={selectedTraveller} option={item}/>
+            <OptionCard selectedParameter={selectedTraveller} option={item}/>
             </TouchableOpacity>)}   
         />
            <TouchableOpacity style={{

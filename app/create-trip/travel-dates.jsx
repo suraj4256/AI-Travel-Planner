@@ -82,7 +82,7 @@ export default function TravelDates() {
                 ToastAndroid.show('Please select end date',ToastAndroid.LONG);
             }
             else{
-             router.push('')
+              router.push('/create-trip/select-budget')
             }
            }}
            >
