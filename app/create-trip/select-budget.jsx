@@ -1,8 +1,8 @@
-import { View, Text } from 'react-native'
+import { View, Text, ToastAndroid } from 'react-native'
 import React, { useContext, useEffect, useState } from 'react'
-import { useNavigation } from 'expo-router'
+import { useNavigation, useRouter } from 'expo-router'
 import { Colors } from '../../constants/Colors';
-import { FlatList, TouchableOpacity } from 'react-native-gesture-handler';
+import { FlatList,TouchableOpacity } from 'react-native-gesture-handler';
 import { SelectBudgetTypes } from '../../constants/Budget-options';
 import OptionCard from '../../components/CreateTrip/OptionCard';
 import { CreateTripContext } from '../../context/CreateTripContext';
@@ -11,6 +11,7 @@ export default function SelectBudget() {
 const navigation = useNavigation();
 const [selectedBudget,setSelectedBudget] = useState();
 const {tripData,setTripData} = useContext(CreateTripContext);
+const router = useRouter();
 
 useEffect(()=>{
     navigation.setOptions({
@@ -62,13 +63,21 @@ return (
             <OptionCard selectedParameter={selectedBudget} option={item}/>
             </TouchableOpacity>)}  
           />
-
-<TouchableOpacity style={{
+          <View style={{
+            marginTop:'75%',
+          }}>
+            <TouchableOpacity style={{
                padding:20,
                borderRadius:15,
                backgroundColor:Colors.BLACK,
-               marginTop:'75%',
                alignItems:'center'
+           }}
+           onPress={()=>{
+            if (!selectedBudget) {
+                ToastAndroid.show("Please select budget type", ToastAndroid.LONG);
+              } else {
+                router.push('/create-trip/review-trip');
+              }
            }}
            >
             <Text style={{
@@ -80,6 +89,7 @@ return (
                 Continue
             </Text>
             </TouchableOpacity> 
+            </View>
        </View>
     </View>
   )

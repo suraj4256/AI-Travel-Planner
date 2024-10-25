@@ -2,7 +2,7 @@ import { View, Text, StyleSheet, ToastAndroid } from 'react-native'
 import React, { useState } from 'react'
 import { Colors } from '../../../constants/Colors'
 import { TextInput, TouchableOpacity } from 'react-native-gesture-handler'
-import { router, useRouter } from 'expo-router'
+import { useRouter } from 'expo-router'
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import {auth} from './../../../configs/FirebaseConfig'
 

@@ -19,9 +19,11 @@ export default function TravelDates() {
 
     useEffect(()=>{
         setTripData({...tripData,
+        dateInfo:{
         startdate:startDate,
         enddate:endDate,
         noOfDays: no_of_days+1
+        }
     });
     },[selectedStartDate,selectedEndDate]);
 

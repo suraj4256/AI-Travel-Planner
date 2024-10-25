@@ -8,6 +8,7 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 export default function MyTrip() {
 
   const [userTrips,setUserTrips]=useState([]);
+  
   return (
     <View style={{
         padding:25,
