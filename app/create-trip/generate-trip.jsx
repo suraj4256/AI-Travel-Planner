@@ -47,14 +47,11 @@ export default function GenerateTrip() {
       const result = await chatSession.sendMessage(Final_Prompt);
       const tripResp = result.response.text();
       let cleanedData = tripResp.trim();
-      console.log(cleanedData);
-
   // Remove ```json at the start and ``` at the end
       cleanedData = cleanedData.replace(/^```json\s*/, '').replace(/```$/, '');
-
+      console.log(cleanedData);
   // Parse the cleaned JSON
       const parsed_TripData = JSON.parse(cleanedData);
-
       console.log(parsed_TripData);
       const docId = (Date.now()).toString();
       const tripRef = collection(db, "UserTrips");
