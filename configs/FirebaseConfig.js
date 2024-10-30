@@ -8,7 +8,7 @@ import { getFirestore } from "firebase/firestore";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyAnNSEtT05I48EROHtHgYt6DBG8kwl0vig",
+  apiKey: process.env.EXPO_PUBLIC_FIREBASEE_API_KEY,
   authDomain: "ai-travel-planner-ee8f6.firebaseapp.com",
   projectId: "ai-travel-planner-ee8f6",
   storageBucket: "ai-travel-planner-ee8f6.appspot.com",

@@ -58,7 +58,8 @@ export default function GenerateTrip() {
       // setDoc is not giving any response.._result is used for future use if setDoc is provided to give response in any manner.
      await setDoc(doc(tripRef,docId), {
           userEmail: user.email,
-          tripData: parsed_TripData
+          tripPlan: parsed_TripData,
+          tripData:JSON.stringify(tripData)
         });
         setLoading(false);
         console.log("Loading state after:", loading); // Still won't reflect the updated state immediately
